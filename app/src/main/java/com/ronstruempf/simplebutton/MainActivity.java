@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,5 +50,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void buttonOnClick(View v) {
+        ((Button) v).setText("I've been clicked!");
+        TextView view = (TextView)findViewById(R.id.textView);
+        if (view != null) {
+            view.setText("You clicked my button!");
+        }
     }
 }
