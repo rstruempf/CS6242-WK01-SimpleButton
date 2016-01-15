@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int counter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,20 @@ public class MainActivity extends AppCompatActivity {
         TextView view = (TextView)findViewById(R.id.textView);
         if (view != null) {
             view.setText("You clicked my button!");
+        }
+    }
+
+    public void incOnClick(View v) {
+        Button button = (Button) v;
+        if (button.getText().equals("+")) {
+            counter++;
+        }
+        else {
+            counter--;
+        }
+        TextView view = (TextView)findViewById(R.id.textView);
+        if (view != null) {
+            view.setText(Integer.toString(counter));
         }
     }
 }
